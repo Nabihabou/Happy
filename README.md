@@ -11,8 +11,7 @@ BinaryExpressionTree.cpp utils.cpp -o Interpreter -lreadline
 Por enquanto só existem duas flags:
 </p>
 <ul>
-<li>disableIntegers</li>
-<li style="text-decoration:none"> Todos os numeros são considerados do tipo flutuante.</li>
+<li><h2>disableIntegers</h2><p>Todos os numeros são considerados do tipo flutuante.<p></li>
 <li>disableZeroConvergence</li>
 <li style="text-decoration:none"> Todos os numeros próximos de zero são exibidos em sua forma original, e não como zero.</li>
 </ul>
