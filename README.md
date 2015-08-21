@@ -10,9 +10,9 @@ BinaryExpressionTree.cpp utils.cpp -o Interpreter -lreadline
 <p>
 Por enquanto só existem duas flags:
 </p>
-<ol>
+<ul>
 <li>disableIntegers</li>
 <li style="text-decoration:none"> Todos os numeros são considerados do tipo flutuante.</li>
 <li>disableZeroConvergence</li>
 <li style="text-decoration:none"> Todos os numeros próximos de zero são exibidos em sua forma original, e não como zero.</li>
-</ol>
+</ul>
