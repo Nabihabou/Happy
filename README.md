@@ -12,5 +12,5 @@ Por enquanto só existem duas flags:
 </p>
 <ul>
 <li><h2>disableIntegers</h2><p>Todos os numeros são considerados do tipo flutuante.<p></li>
-<li><h2>disableZeroConvergence<h2><p>Todos os numeros próximos de zero são exibidos em sua forma original, e não como zero.</p></li>
+<li><h2>disableZeroConvergence</h2><p>Todos os numeros próximos de zero são exibidos em sua forma original, e não como zero.</p></li>
 </ul>
