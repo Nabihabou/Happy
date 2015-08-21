@@ -17,6 +17,8 @@ void add_history(char* notUsed) {}
 #include <readline/history.h>
 #include <readline/readline.h>
 #endif
+
+
 static std::map<std::string, std::pair<std::string, std::string>> vars;
 double resolveDouble(std::string input)
 {
@@ -46,7 +48,19 @@ int main(int argc, char const *argv[])
 {
 	//Loop Principal
   defineConstants();
-	bool zeroConverge = true;
+  bool zeroConverge = true;
+  bool disableIntegers = false;
+  for(int i = 1;i < argc;i++)
+  {
+    if(std::string(argv[i]) == "disableZeroConvergence")
+    {
+      zeroConverge = false;
+    }
+    else if(std::string(argv[i]) == "disableIntegers")
+    {
+      disableIntegers = true;
+    }
+  }
 	std::cout << "YetAnotherInterpreter - Versão 1.2" << std::endl << "Data: " <<__DATE__ << std::endl << "Hora: " << __TIME__ << std::endl;
   while(true)
   {
@@ -66,13 +80,13 @@ int main(int argc, char const *argv[])
         assignment[0].erase(std::remove(assignment[0].begin(), assignment[0].end(), ' '), assignment[0].end());
         if(match_variable(assignment[0]))
         {
-          if(checkIfDouble(assignment[1]))
+          if(!checkIfDouble(assignment[1]) && !disableIntegers)
           {
-            vars[assignment[0]] = std::make_pair("Double", std::to_string(resolveDouble(assignment[1])));
+            vars[assignment[0]] = std::make_pair("Integer", std::to_string(resolveInteger(assignment[1])));
           }
           else
           {
-            vars[assignment[0]] = std::make_pair("Integer", std::to_string(resolveInteger(assignment[1])));
+            vars[assignment[0]] = std::make_pair("Double", std::to_string(resolveDouble(assignment[1])));
           }
           std::cout << vars[assignment[0]].second << std::endl;
         }
@@ -81,18 +95,18 @@ int main(int argc, char const *argv[])
           throw std::runtime_error("Lado esquerdo não é uma variável.");
         }
       }
-      else if(checkIfDouble(entry))
+      else if(!checkIfDouble(entry) && !disableIntegers)
+      {
+        long output = resolveInteger(entry);
+        std::cout << output << std::endl;
+      }
+      else
       {
         double output = resolveDouble(entry);
         if(zeroConverge && fabs(output) < 1e-10)
         {
           output = 0;
         }
-        std::cout << output << std::endl;
-      }
-      else
-      {
-        long output = resolveInteger(entry);
         std::cout << output << std::endl;
       }
       free(input);
