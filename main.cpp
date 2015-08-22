@@ -36,7 +36,14 @@ long resolveInteger(std::string input)
 
 bool checkIfDouble(std::string expr)
 {
-	return std::regex_search(expr, std::regex("(\\.)|(cos)|(sin)|(tan)"));
+  for(auto item : vars)
+  {
+    if (std::regex_search(expr, std::regex("(" + item.first + ")")) && item.second.first == "Double")
+    {
+      return true;
+    }
+  }
+	return std::regex_search(expr, std::regex("(\\.)|(pi)|(cos)|(sin)|(tan)|(acos)|(asin)|(atan)|(log)|(log2)|(sqrt)|(exp)|(logb)"));
 }
 
 void defineConstants()
