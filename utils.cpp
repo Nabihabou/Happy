@@ -239,7 +239,7 @@ bool lowerPrecedence(std::string lower, std::string higher)
 	return false;
 }
 
-std::vector<std::string> extractArguments(std::string symbol, std::string function, int size)
+std::vector<std::string> extractArguments(std::string symbol, std::string function)
 {
 	symbol = std::regex_replace(symbol, std::regex("("+function+")"), "", std::regex_constants::format_first_only);
 	symbol = std::regex_replace(symbol, std::regex("(\\()"), "", std::regex_constants::format_first_only);
