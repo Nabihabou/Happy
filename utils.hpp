@@ -22,6 +22,6 @@ double operateDouble(std::string operation, double lhand, double rhand);
 long operateInteger(std::string operation, long lhand, long rhand);
 std::string fitInput(std::string input);
 bool lowerPrecedence(std::string lower, std::string higher);
-std::vector<std::string> extractArguments(std::string symbol, std::string function, int num);
+std::vector<std::string> extractArguments(std::string symbol, std::string function);
 
 #endif
