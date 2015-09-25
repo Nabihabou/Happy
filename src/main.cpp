@@ -3,7 +3,7 @@
 #include "BinaryExpressionTree.hpp"
 //Versionamento adicionado após começo de projeto,
 //Versão aproximada.
-#define VERSION "0.3.7"
+#define VERSION "0.4.7"
 
 #ifdef _WIN32
 char* readline(char* notUsed)
@@ -77,18 +77,24 @@ int main(int argc, char const *argv[])
             << std::endl
             << "Hora: " << __TIME__
             << std::endl;
-  while(true)
+  std::string entry = "";
+  while(entry != "exit()" && entry != "exit")
   {
     try
     {
-      std::string entry;
       char* input;
       input = readline("=>");
       add_history(input);
       if(input != nullptr)
+      {
         entry = std::string(input);
+        if(entry == "exit" || entry == "exit()")
+          break;
+      }
       else
         entry = "";
+
+
       if(match_assignment(entry))
       {
         std::vector<std::string> assignment = tokenize(entry, '=');
