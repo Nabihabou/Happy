@@ -1,6 +1,9 @@
 #include <iostream>
 #include <utility>
 #include "BinaryExpressionTree.hpp"
+//Versionamento adicionado após começo de projeto,
+//Versão aproximada.
+#define VERSION "0.3.7"
 
 #ifdef _WIN32
 char* readline(char* notUsed)
@@ -68,7 +71,12 @@ int main(int argc, char const *argv[])
       disableIntegers = true;
     }
   }
-	std::cout << "YetAnotherInterpreter - Versão 1.2" << std::endl << "Data: " <<__DATE__ << std::endl << "Hora: " << __TIME__ << std::endl;
+	std::cout << "YetAnotherInterpreter - " << VERSION
+            << std::endl
+            << "Data: " <<__DATE__
+            << std::endl
+            << "Hora: " << __TIME__
+            << std::endl;
   while(true)
   {
     try
