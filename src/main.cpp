@@ -3,7 +3,7 @@
 #include "BinaryExpressionTree.hpp"
 //Versionamento adicionado após começo de projeto,
 //Versão aproximada.
-#define VERSION "0.4.7"
+#define VERSION "0.5.7"
 
 #ifdef _WIN32
 char* readline(char* notUsed)
