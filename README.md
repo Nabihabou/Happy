@@ -1,5 +1,5 @@
-# YetAnotherInterpreter
-Um interpretador de expressões simples, escrito em C++.
+# Happy
+Um interpretador simples escrito em C++, ele resolve expressões matemáticas simples e tem suporte a variáveis numéricas.
 
 <h2>Build:</h2>
 <p>Para compilar, use make all</p>
